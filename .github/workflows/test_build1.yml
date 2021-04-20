@@ -15,9 +15,9 @@ jobs:
         uses: actions/cache@v2
         with: 
           path: ~/ .cache/pip
-          key : ${{ runner.os }}-pip-${{ hashFiles('**/requierments.txt') }}
+          key : ${{ runner.os }}-multiarch
           restore-keys: |
-              ${{ runner.os }}-pip- 
+              ${{ runner.os }}-multiarch-
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -39,5 +39,5 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: anindit123456/cicd_assignment:v1
+          tags: anindit123456/cicd_assignment:v1.1
 
